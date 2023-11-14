@@ -1,8 +1,11 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
+from selenium.webdriver.chrome.options import Options
 
 def get_tiktok_profile_by_selenium(user_id):
-    driver = webdriver.Chrome()
+    options = Options()
+    options.add_argument('--headless')
+    driver = webdriver.Chrome(options=options)
     url = f"https://www.tiktok.com/@{user_id}"
     driver.get(url)
     driver.implicitly_wait(30)
