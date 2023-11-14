@@ -4,7 +4,7 @@ from tiktok_scraping import get_tiktok_profile_by_selenium
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-def index()
+def index():
     return "flask-scraping"
 
 @app.route('/get_profile', methods=['GET'])
