@@ -24,6 +24,3 @@ def get_text_from_elements(soup:BeautifulSoup, attr_name, attr_value):
         return elements[0].text
     else:
         return ""
-
-profile_page = get_tiktok_profile_by_selenium("hirosuke_motekuri")
-print(profile_page)
