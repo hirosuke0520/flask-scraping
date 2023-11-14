@@ -1,4 +1,5 @@
-flask
-selenium
-beautifulsoup4
 gunicorn==19.9.0
+flask
+beautifulsoup4
+selenium
+webdriver-manager

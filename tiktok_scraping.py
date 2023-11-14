@@ -1,11 +1,17 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
-from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 
 def get_tiktok_profile_by_selenium(user_id):
-    options = Options()
+
+    options = webdriver.ChromeOptions()
+    options.add_argument('--no-sandbox')
     options.add_argument('--headless')
-    driver = webdriver.Chrome(options=options)
+    options.add_argument('--disable-dev-shm-usage')
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=options)
+
     url = f"https://www.tiktok.com/@{user_id}"
     driver.get(url)
     driver.implicitly_wait(30)
