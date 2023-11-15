@@ -8,9 +8,10 @@ def get_tiktok_profile_by_selenium(user_id):
     options = webdriver.ChromeOptions()
     options.add_argument('--no-sandbox')
     options.add_argument('--headless')
-    options.add_argument('--disable-dev-shm-usage')
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=options)
+    # options.add_argument('--disable-dev-shm-usage')
+    # service = Service(ChromeDriverManager().install())
+    # driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(options=options)
 
     url = f"https://www.tiktok.com/@{user_id}"
     driver.get(url)
