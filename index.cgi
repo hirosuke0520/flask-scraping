@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3.7
 from flask import Flask, request, jsonify
 from tiktok_scraping import get_tiktok_profile_by_selenium
 from wsgiref.handlers import CGIHandler
