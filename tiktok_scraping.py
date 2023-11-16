@@ -34,3 +34,6 @@ def get_text_from_elements(soup:BeautifulSoup, attr_name, attr_value):
         return elements[0].text
     else:
         return ""
+
+def fuga():
+    return "fugafuga"

@@ -1,15 +1,6 @@
-# CGIスクリプトを有効にする
-Options +ExecCGI
-
-# CGIスクリプトとして実行するファイルの拡張子を設定
-AddHandler cgi-script .cgi
-
-# ルートURLのリクエストをindex.cgiにリダイレクト
 RewriteEngine On
-RewriteBase /tiktok/
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^$ index.cgi [L]
+RewriteRule ^(.*)$ /tiktok/index.cgi/$1 [QSA,L]
 
 # /get_profileへのリクエストもindex.cgiにリダイレクトし、パス情報を保持
-RewriteRule ^get_profile/(.*) index.cgi/$1 [L]
+# RewriteRule ^get_profile/(.*) index.cgi/$1 [L]
