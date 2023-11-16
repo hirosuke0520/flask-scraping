@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from tiktok_scraping import get_tiktok_profile_by_selenium
+from wsgiref.handlers import CGIHandler
 
 app = Flask(__name__)
 
@@ -13,5 +14,8 @@ def get_profile():
     profiles = [get_tiktok_profile_by_selenium(user_id) for user_id in user_ids]
     return jsonify(profiles)
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
+
+# CGI環境での実行用に変更
+CGIHandler().run(app)
