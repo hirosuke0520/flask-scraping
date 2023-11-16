@@ -9,7 +9,7 @@ RewriteEngine On
 RewriteBase /tiktok/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^$ /main.cgi [L]
+RewriteRule ^$ main.cgi [L]
 
-# /userへのリクエストもmain.cgiにリダイレクトし、パス情報を保持
-RewriteRule ^tiktok/(.*) /main.cgi/$1 [L]
+# /get_profileへのリクエストもmain.cgiにリダイレクトし、パス情報を保持
+RewriteRule ^get_profile/(.*) main.cgi/$1 [L]
