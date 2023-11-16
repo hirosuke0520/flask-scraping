@@ -6,7 +6,7 @@ AddHandler cgi-script .cgi
 
 # ルートURLのリクエストをmain.cgiにリダイレクト
 RewriteEngine On
-RewriteBase /
+RewriteBase /tiktok/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^$ /main.cgi [L]
