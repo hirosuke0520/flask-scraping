@@ -5,15 +5,12 @@ from selenium.webdriver.chrome.service import Service
 
 def get_tiktok_profile_by_selenium(user_id):
 
-    return user_id
-
     options = webdriver.ChromeOptions()
     options.add_argument('--no-sandbox')
     options.add_argument('--headless')
-    # options.add_argument('--disable-dev-shm-usage')
-    # service = Service(ChromeDriverManager().install())
-    # driver = webdriver.Chrome(service=service, options=options)
-    driver = webdriver.Chrome(options=options)
+    options.add_argument('--disable-dev-shm-usage')
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=options)
 
     url = f"https://www.tiktok.com/@{user_id}"
     driver.get(url)
@@ -36,6 +33,3 @@ def get_text_from_elements(soup:BeautifulSoup, attr_name, attr_value):
         return elements[0].text
     else:
         return ""
-
-def fuga():
-    return "fugafuga"
