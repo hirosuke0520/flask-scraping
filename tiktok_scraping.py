@@ -5,6 +5,8 @@ from selenium.webdriver.chrome.service import Service
 
 def get_tiktok_profile_by_selenium(user_id):
 
+    return user_id
+
     options = webdriver.ChromeOptions()
     options.add_argument('--no-sandbox')
     options.add_argument('--headless')
